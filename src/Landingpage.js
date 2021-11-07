@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
+import {ReactComponent as Car} from './images/car.svg';
+import {ReactComponent as Earth} from './images/earth.svg';
+import {ReactComponent as Plant} from './images/plant.svg';
 class Landingpage extends React.Component {
 
     render() { 
         return ( 
-            <div class=""> 
-                <h1>Klimaat effect</h1>
-                
+            <div className="container mx-auto">
+                <div className="grid grid-rows-2 h-screen">
+                    <div className="row-span-1 gap-y-4 flex justify-center items-center flex-col">
+                        <h1 className="title">Klimaat effect</h1>
+                        <p className="paragraph">Wat voor effect heeft klimaatverandering op jou?</p>
+                        <button className="btn-1 drop-shadow">Krijg een schatting</button>
+                    </div>
+                   
+                    <div className="row-span-1 my-5 flex justify-center items-center">
+                        <Plant className="h-50"/>
+                        <Earth className="h-full" />
+                        <Car className="h-50"/>
+                    </div>
+                </div>
+             
             </div>
          );
     }
