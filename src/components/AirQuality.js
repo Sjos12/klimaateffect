@@ -7,7 +7,7 @@ class AirQuality extends React.Component {
         super(props);
         this.state = {
             isLoaded: false, 
-            ac: {}
+            items: {}
         };
     }
     render() {
@@ -21,7 +21,6 @@ class AirQuality extends React.Component {
                     </div>
                     <div>
                         <h2 className="subtitle">Stikstof</h2>
-                        <p>{this.state.items.title}</p>
                     </div>
     
                     
@@ -46,7 +45,7 @@ class AirQuality extends React.Component {
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
             (error) => {
-            
+                console.log(error);
             }
           )
       }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AirQuality from './components/AirQuality';
 import Landingpage from './components/Landingpage';
+import Sealevel from './components/Sealevel';
 import './sass/main.scss';
 export class App extends React.Component {
     constants = { 
@@ -35,13 +36,20 @@ export class App extends React.Component {
     render() {
         if (this.state.locationIsSet) {
             return (
+         
+
                 <>
+                
                     <Landingpage 
                         setLocation={this.setLocation.bind(this)}
                         location={this.state.location} 
                         constants={this.constants} 
                     />
                     <AirQuality 
+                        location={this.state.location} 
+                        constants={this.constants} 
+                    />
+                    <Sealevel 
                         location={this.state.location} 
                         constants={this.constants} 
                     />
