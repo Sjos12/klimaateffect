@@ -14,16 +14,10 @@ class AirQuality extends React.Component {
         return (
             <div className="container mx-auto">
                 <div className="grid-rows-3">
-                    <h1 className="title">Luchtkwaliteit</h1>
+                    <h1 className="title">Luchtkwaliteit Index</h1>
                     <div>
-                        <h2 className="subtitle">Koolstofdioxide</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, quos architecto ullam dolorum totam, at qui blanditiis necessitatibus, aliquid nulla minus unde sequi accusantium deserunt mollitia repellendus fugiat! Saepe, minima.</p>
+                        <h2 className="title">{ this.state.aqi }</h2>
                     </div>
-                    <div>
-                        <h2 className="subtitle">Stikstof</h2>
-                    </div>
-    
-                    
                 </div>
             </div>
         )
@@ -35,8 +29,9 @@ class AirQuality extends React.Component {
           .then(
             (result) => {
                 console.log(result);
+                let aqi = result.data.current.pollution.aqius;
                 this.setState({
-                    items: result,
+                    aqi: aqi,
                 }, () => {
                     console.log(this.state);
                 })

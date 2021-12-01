@@ -7,13 +7,26 @@ export default class Sealevel extends React.Component {
         this.state = {
             isLoaded: false,
             elevation: null, 
+            futureElevation: 0,
+            underwater: false, 
         }
     }
     render() {
+        let waterState = '';
+        if (this.state.underwater) {
+            waterState = 'Your location might be underwater'; 
+        } 
+        else {
+            waterState = 'In the worst case scenario your location will likely not be underwater.';
+        }
         return (
             <>
                 <div>
-                    {this.state.elevation} meters
+                    <p className='subtitle'>Your current elevation</p>
+                    <h1 className='title'>{this.state.elevation}m</h1>
+                    <p className='subtitle'>Your elevation compensated by the worst case sea level rise by 2100</p>
+                    <h1 className='title'>{this.state.futureElevation}m</h1>
+                    {waterState}
                 </div>
             </>
            
@@ -38,9 +51,21 @@ export default class Sealevel extends React.Component {
                     locations: [location],
                 })
                 .then(({ results }) => {
+                    let elevation = results[0].elevation;
+                    elevation = Math.round(elevation * 10) / 10;
+                    let futureElevation =  Math.round((elevation -2.5) * 10) / 10;
+                    let underWater = false;
+                    if((elevation - 2.5) >= 0) {
+                        underWater = false;
+                    }
+                    else if ((elevation - 2.5) <= 0) {
+                        underWater = true;
+                    }
                     this.setState({
                         isLoaded: true, 
-                        elevation: results[0].elevation
+                        elevation: elevation, 
+                        futureElevation: futureElevation,
+                        underwater: underWater,
                     })
                 })
                 .catch((e) => {
