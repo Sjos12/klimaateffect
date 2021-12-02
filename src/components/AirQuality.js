@@ -14,7 +14,7 @@ class AirQuality extends React.Component {
         return (
             <div className="container mx-auto">
                 <div className="grid-rows-3">
-                    <h1 className="title">Luchtkwaliteit Index</h1>
+                    <h1 className="title">Luchtkwaliteit</h1>
                     <div>
                         <h2 className="title">{ this.state.aqi }</h2>
                     </div>

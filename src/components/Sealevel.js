@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Loader } from '@googlemaps/js-api-loader';
-
+import { ReactComponent as Wave } from '../images/wave.svg';
 export default class Sealevel extends React.Component {
     constructor(props) {
         super(props) 
@@ -21,6 +21,12 @@ export default class Sealevel extends React.Component {
         }
         return (
             <>
+                <div className='wave__wrapper'>
+                    <Wave className="wave" />
+                </div>
+                <div className='bg-blue'>
+
+                </div>
                 <div>
                     <p className='subtitle'>Your current elevation</p>
                     <h1 className='title'>{this.state.elevation}m</h1>
