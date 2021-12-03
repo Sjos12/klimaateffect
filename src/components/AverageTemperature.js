@@ -15,10 +15,17 @@ export default class AverageTemperature extends Component {
        
      
         return (
-            <div>
-                <canvas className='chart' id="chart">
+            <div className='container grid grid-rows-3 average-temperature__wrapper'>
+                <h1 className='title'>Average Temperature.</h1>
+                <div className='average-temperature__paragraph'>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, voluptates? Temporibus asperiores laboriosam dolor, nemo optio voluptatum eligendi, fugit enim beatae voluptatem veritatis accusamus fugiat. Nisi amet omnis ab. Maiores.</p>
+                </div>
+                <div className='average-temperature__chart'>
+                    <canvas className='chart' id="chart">
 
-                </canvas>
+                    </canvas>
+                </div>
+    
             </div>
         )
     }

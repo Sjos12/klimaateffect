@@ -1,7 +1,7 @@
 $green: #9CEC5B;
 $purple: #533A71;
 $blue: #455FA1;
-
+$lightgreen: #EFFFC8;
 .green {
     color: $green;
 }
@@ -12,8 +12,17 @@ $blue: #455FA1;
 .blue { 
     color: $blue;
 }
+
+.lightgreen {
+    color: $lightgreen;
+}
+
 .bg-green {
     background-color: $green;
+}
+
+.bg-lightgreen {
+    background-color: $lightgreen;
 }
 .bg-purple {
     background-color: $purple;

@@ -43,3 +43,24 @@ body {
     width: 400px;
     height: 400px;
 }
+.bg-blob {
+    width: 280px;
+    height: 280px;
+    background-image: url('../images/blob.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.paragraph {
+    font-size: 1.45rem;
+    font-weight: 300;
+    letter-spacing: .26px;
+    line-height: 52px;
+    color: $purple;
+}
+
+.subtitle {
+    @extend.paragraph;
+    font-size: 1.2rem;
+}

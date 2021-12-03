@@ -39,45 +39,47 @@ export default class Sealevel extends React.Component {
         )
     }
     componentDidMount() {
-        const loader = new Loader({
-            apiKey: this.props.constants.elevationkey,
-            version: "weekly",
-        });
-
-        let location =  {   
-                            lat: this.props.location.lat, 
-                            lng: this.props.location.lng
-                        }; 
-        
-        loader
-            .load()
-            .then((google) => {
-                const elevator = new google.maps.ElevationService();
-                elevator.getElevationForLocations({
-                    locations: [location],
-                })
-                .then(({ results }) => {
-                    let elevation = results[0].elevation;
-                    elevation = Math.round(elevation * 10) / 10;
-                    let futureElevation =  Math.round((elevation -2.5) * 10) / 10;
-                    let underWater = false;
-                    if((elevation - 2.5) >= 0) {
-                        underWater = false;
-                    }
-                    else if ((elevation - 2.5) <= 0) {
-                        underWater = true;
-                    }
-                    this.setState({
-                        isLoaded: true, 
-                        elevation: elevation, 
-                        futureElevation: futureElevation,
-                        underwater: underWater,
-                    })
-                })
-                .catch((e) => {
-                        console.log(e);
-                    }
-                );
+        if(this.props.constants.makeApiCalls) {
+            const loader = new Loader({
+                apiKey: this.props.constants.elevationkey,
+                version: "weekly",
             });
+    
+            let location =  {   
+                                lat: this.props.location.lat, 
+                                lng: this.props.location.lng
+                            }; 
+            
+            loader
+                .load()
+                .then((google) => {
+                    const elevator = new google.maps.ElevationService();
+                    elevator.getElevationForLocations({
+                        locations: [location],
+                    })
+                    .then(({ results }) => {
+                        let elevation = results[0].elevation;
+                        elevation = Math.round(elevation * 10) / 10;
+                        let futureElevation =  Math.round((elevation -2.5) * 10) / 10;
+                        let underWater = false;
+                        if((elevation - 2.5) >= 0) {
+                            underWater = false;
+                        }
+                        else if ((elevation - 2.5) <= 0) {
+                            underWater = true;
+                        }
+                        this.setState({
+                            isLoaded: true, 
+                            elevation: elevation, 
+                            futureElevation: futureElevation,
+                            underwater: underWater,
+                        })
+                    })
+                    .catch((e) => {
+                            console.log(e);
+                        }
+                    );
+                });
+        }
     }
 }
