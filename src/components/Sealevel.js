@@ -21,19 +21,20 @@ export default class Sealevel extends React.Component {
         }
         return (
             <>
-                <div className='wave__wrapper'>
-                    <Wave className="wave" />
-                </div>
-                <div className='bg-blue'>
-
-                </div>
-                <div>
-                    <p className='subtitle'>Your current elevation</p>
-                    <h1 className='title'>{this.state.elevation}m</h1>
-                    <p className='subtitle'>Your elevation compensated by the worst case sea level rise by 2100</p>
-                    <h1 className='title'>{this.state.futureElevation}m</h1>
-                    {waterState}
-                </div>
+                    <div className='wave__wrapper'>
+                        <Wave className="wave" />
+                    </div>
+                    <div className='bg-blue'>
+                        <div className="container mx-auto py-60">
+                            <h1 className="title">Rising sea levels</h1>
+                            <p className='subtitle--white'>Your elevation</p>
+                            <h1 className='title'>{this.state.elevation}m</h1>
+                            <p className='subtitle--white'>Your elevation by 2100*</p>
+                            <h1 className='title'>{this.state.futureElevation}m</h1>
+                        
+                            <p className='paragraph--white'>{waterState}</p>
+                        </div>
+                    </div>
             </>
            
         )

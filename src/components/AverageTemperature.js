@@ -15,18 +15,21 @@ export default class AverageTemperature extends Component {
        
      
         return (
-            <div className='container grid grid-rows-3 average-temperature__wrapper'>
-                <h1 className='title'>Average Temperature.</h1>
-                <div className='average-temperature__paragraph'>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, voluptates? Temporibus asperiores laboriosam dolor, nemo optio voluptatum eligendi, fugit enim beatae voluptatem veritatis accusamus fugiat. Nisi amet omnis ab. Maiores.</p>
+            <div className='bg-lightgreen'>
+                <div className='mx-auto py-60 container average-temperature__wrapper'>
+                    <h1 className='title purple'>Average Temperature.</h1>
+                    <div className="grid grid-cols-12 gap-2">
+                        <div className='col-span-4'>
+                            <p className='paragraph'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, voluptates? Temporibus asperiores laboriosam dolor, nemo optio voluptatum eligendi, fugit enim beatae voluptatem veritatis accusamus fugiat. Nisi amet omnis ab. Maiores.</p>
+                        </div>
+                        <div className='col-span-6'>
+                            <canvas className='chart' id="chart"></canvas>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div className='average-temperature__chart'>
-                    <canvas className='chart' id="chart">
-
-                    </canvas>
-                </div>
-    
             </div>
+        
         )
     }
 
@@ -64,11 +67,10 @@ export default class AverageTemperature extends Component {
                     let values = [];
                     let sum = 0;
                     let month = 0;
-                    for(let i = 0; i < data.length; i++) {
-                        if (month <= 12) { 
+                    for( let i = 0; i < data.length; i++ ) {
+                        if (month < 12) { 
                             sum += data[i].tavg;
                             month ++;
-                            continue;
                         }
                         else {
                             let date = new Date(data[i].date);
@@ -96,7 +98,8 @@ export default class AverageTemperature extends Component {
                                     borderColor: [
                                         '#9CEC5B',
                                     ],
-                                    borderWidth: 2
+                                    borderWidth: 2,
+                                    tension: 0.1
                                 }]
                             },
                             options: {
@@ -106,7 +109,7 @@ export default class AverageTemperature extends Component {
                                     },
                                     title: {
                                         display: true,
-                                        text: 'Average monthly temperature at your location.'
+                                        text: 'Average yearly temperature at your location.'
                                     },
                                 },
                                 scales: {

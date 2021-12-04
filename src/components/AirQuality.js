@@ -13,7 +13,7 @@ class AirQuality extends React.Component {
     }
     render() {
         return (
-            <div className="container mx-auto">
+            <div className="container mx-auto my-60">
                 <div className="grid-rows-3">
                     <h1 className="title">Luchtkwaliteit</h1>
                     <div className='grid grid-cols-2 gap-1'>

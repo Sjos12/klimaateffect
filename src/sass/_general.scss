@@ -14,7 +14,10 @@ body {
     color: $purple;
     font-size: 1.5rem;
 }
-
+.paragraph--white {
+    @extend.paragraph; 
+    color: white !important;
+}
 .btn-1 {
     background-color: $green;
     color: white;
@@ -25,6 +28,7 @@ body {
 }
 .wave {
     width: 100%;
+    height: 100%;
 }
 .bg-blue {
     background-color: $blue;
@@ -39,10 +43,6 @@ body {
     }
 }
 
-.chart {
-    width: 400px;
-    height: 400px;
-}
 .bg-blob {
     width: 280px;
     height: 280px;
@@ -63,4 +63,9 @@ body {
 .subtitle {
     @extend.paragraph;
     font-size: 1.2rem;
+}
+
+.subtitle--white {
+    @extend.subtitle;
+    color: white;
 }
