@@ -21,21 +21,24 @@ class AirQuality extends React.Component {
         let paragraph = '';
         let aqi = this.state.aqi;
         if (aqi >= this.state.rating.good[0] && aqi <=  this.state.rating.good[1]) {
-            paragraph = 'The air at your location is relatively clean: There are few greenhouse gasses like carbon dioxide and methane present in the air at your location. Even though the air quality is quite good, there is a large chance that this will change in the future due to industrialization and modernization. Many countries with clean air quality, like the United States, still participate in polluting the air by building factories and transporting goods in and from other countries.';
+            paragraph = 'The air quality at your location is satisfactory: There are few pollutants present in the air at your location, which pose very little to no health risk. Even though the air quality is quite good, there is a large chance that this will change in the future due to industrialization and modernization. Many countries with clean air quality, like the United States, still participate in polluting the air by building factories and transporting goods in and from other countries.';
         }
         else if (aqi >= this.state.rating.medium[0] && aqi <= this.state.rating.medium[1]) {
-            paragraph = 'The air at your location is polluted: There is some amount of greenhouse gasses like carbon dioxide and methane present in the air at your location. If immediate action is not taken, this may cause environmental or health issues. There is a large chance that the air quality will decrease even further in the future due to industrialization and modernization. The air is polluted due to greenhouse gas-emitting sources like factories or containerships.'
+            paragraph = 'The air quality at your location is acceptable. There are pollutants present in the air at your location, which pose a health risk to certain sensitive groups. If immediate action is not taken, this may cause environmental issues and will start to affect the general public. There is a large chance that the air quality will decrease even further in the future due to industrialization and modernization. The air is polluted due to greenhouse gas-emitting sources like factories or containerships. '
         }
         else if (aqi >= this.state.rating.bad[0] && aqi <= this.state.rating.bad[1]) {
-            paragraph = 'The air at your location is polluted: There are too many greenhouse gasses like carbon dioxide and methane present in the air at your location. This is already causing environmental and health issues for some and will continue doing so if immediate action is not taken. The air is polluted due to greenhouse gas-emitting sources like factories or containerships.';
+            paragraph = 'The air quality at your location is inadequate: There are too many pollutants present in the air at your location, which pose a health risk to the general public, and can cause more serious issues to sensitive groups. Air pollution already causes environmental and health problems, and will continue doing so if immediate action is not taken. The air is polluted due to greenhouse gas-emitting sources like factories or containerships.';
         }
         return (
             <div className="container mx-auto my-60">
                 <div className="">
                     <h1 className="title text-5xl">Air Quality.</h1>
                     <div className='grid md:grid-cols-2 md:grid-flow-col grid-flow-row gap-2'>
-                        <div className="d-flex order-2 md:order-1">
+                        <div className="grid gap-y-5 order-2 md:order-1">
                             <p className='paragraph'>{ paragraph }
+                            </p>
+                            <p className='paragraph'>
+                            This number is based on the concentration of five major air pollutants: ground-level ozone, particle pollution (also known as particulate matter, including PM2.5 and PM10), carbon monoxide, sulfur dioxide and nitrogen dioxide.
                             </p>
                         </div>
                         <div className='flex pt-10 flex-col justify-between items-center order-1 md:order-2'>
