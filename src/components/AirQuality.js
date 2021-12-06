@@ -31,20 +31,20 @@ class AirQuality extends React.Component {
         }
         return (
             <div className="container mx-auto my-60">
-                <div className="grid-rows-3">
-                    <h1 className="title">Air Quality.</h1>
-                    <div className='grid grid-cols-2 gap-1'>
-                        <div>
+                <div className="">
+                    <h1 className="title text-5xl">Air Quality.</h1>
+                    <div className='grid md:grid-cols-2 md:grid-flow-col grid-flow-row gap-2'>
+                        <div className="d-flex order-2 md:order-1">
                             <p className='paragraph'>{ paragraph }
                             </p>
                         </div>
-                        <div className='flex flex-col justify-between items-center '>
+                        <div className='flex pt-10 flex-col justify-between items-center order-1 md:order-2'>
                             <div className="bg-blob grid place-content-center">
                                 <p className='subtitle'>Air Quality Index:</p>
-                                <h2 className="title text-center">{ this.state.aqi }</h2>
+                                <h2 className="title text-7xl text-center">{ this.state.aqi }</h2>
                             </div>
                     
-                            <Factory/>
+                            <Factory className="w-full"/>
                         </div>
                      
                     </div>

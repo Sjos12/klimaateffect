@@ -17,8 +17,8 @@ export default class AverageTemperature extends Component {
         return (
             <div className='bg-lightgreen top-slanted'>
                 <div className='mx-auto pt-60 pb-80 container average-temperature__wrapper'>
-                    <h1 className='title purple'>Average Temperature.</h1>
-                    <div className="grid grid-cols-12 gap-2">
+                    <h1 className='title text-5xl purple'>Average Temperature.</h1>
+                    <div className="grid lg:grid-cols-12 lg:grid-flow-col grid-flow-row gap-2">
                         <div className='col-span-5'>
                             <p className='paragraph'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, voluptates? Temporibus asperiores laboriosam dolor, nemo optio voluptatum eligendi, fugit enim beatae voluptatem veritatis accusamus fugiat. Nisi amet omnis ab. Maiores.</p>
                         </div>

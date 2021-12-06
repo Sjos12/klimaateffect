@@ -33,20 +33,20 @@ export default class Sealevel extends React.Component {
             <div className='offset top-slanted-2'>
                     <div className='bg-blue'>
                         <div className="container mx-auto py-60">
-                            <h1 className="title">Rising sea levels.</h1>
-                            <div className="grid grid-cols-2 gap-3">
-                                <div>
+                            <h1 className="title text-5xl">Rising sea levels.</h1>
+                            <div className="grid md:grid-cols-2 md:grid-flow-col grid-flow-row gap-2">
+                                <div className='order-2 md:order-1'>
                                     <p className='paragraph--white'>{ paragraph }</p>
                                 </div>
-                                <div>
+                                <div className='order-1 md:order-2'>
                                     <div className='grid grid-cols-2'>
                                         <div>
                                             <p className='subtitle--white'>Your elevation</p>
-                                            <h1 className='title'>{this.state.elevation}m</h1>
+                                            <h1 className='title text-7xl'>{this.state.elevation}m</h1>
                                         </div>
                                         <div>
                                             <p className='subtitle--white'>Your elevation by 2100*</p>
-                                            <h1 className='title'>{this.state.futureElevation}m</h1>
+                                            <h1 className='title text-7xl'>{this.state.futureElevation}m</h1>
                                         </div>
                                     </div>
                                 </div>

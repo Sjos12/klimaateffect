@@ -6,8 +6,8 @@ export default class CallToAction extends Component {
             <div className='offset top-slanted'>            
                 <div className='bg-darkgreen'>
                     <div className="container mx-auto py-60">
-                    <h1 className='title--white text-center'>How can you help?</h1>
-                        <div className="grid grid-cols-2 gap-5">
+                    <h1 className='title--white text-5xl text-center'>How can you help?</h1>
+                        <div className="grid lg:grid-cols-2 lg:grid-flow-col grid-flow-row gap-y-10 lg:gap-y-0 md:gap-x-5">
                             <p className='paragraph--white'>
                                 According to the World Health Organization, “Ambient air pollution accounts for an estimated 4.2 million deaths per year due to stroke, heart disease, lung cancer, lung cancer, acute and chronic respiratory diseases.” Air pollution commonly affects citizens from south-east Asian nations like China or India, where the combination of an immense number of people and polluting factories with very few guidelines creates many environmental and health issues. In total, “99 percent of the world’s population live in places where air quality exceeds WHO guideline limits.
                             </p>

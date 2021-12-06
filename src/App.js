@@ -7,7 +7,7 @@ import Sealevel from './components/Sealevel';
 import './sass/main.scss';
 export class App extends React.Component {
     constants = { 
-        makeApiCalls: true,
+        makeApiCalls: false,
         elevationkey: 'AIzaSyDpRXlltKXwPqlSEIFvYRvN1ub_X8rNRLk',
         airqualitykey: '8771f12f-7a3a-48dc-a448-7b6a9c469870', 
         meteoStatKey: '5533b8490amsh57964da1a7664d1p1fb950jsn4c2f9a2dcbdb',
