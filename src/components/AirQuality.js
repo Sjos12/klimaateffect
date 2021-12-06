@@ -55,7 +55,7 @@ class AirQuality extends React.Component {
 
     componentDidMount() {
         if (this.props.constants.makeApiCalls) {
-            fetch(`http://api.airvisual.com/v2/nearest_city?lat=${this.props.location.lat}&lon=${this.props.location.lng}&key=${this.props.constants.airqualitykey}`)
+            fetch(`https://api.airvisual.com/v2/nearest_city?lat=${this.props.location.lat}&lon=${this.props.location.lng}&key=${this.props.constants.airqualitykey}`)
             .then(res => res.json())
             .then(
               (result) => {
