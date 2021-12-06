@@ -6,36 +6,55 @@ export default class Sealevel extends React.Component {
         super(props) 
         this.state = {
             isLoaded: false,
-            elevation: null, 
+            elevation: 0,   
             futureElevation: 0,
             underwater: false, 
+            rating: {
+                good: [0.3, 1000], 
+                medium: [-0.2, 0.2],
+                bad: [-0.3, -1000], 
+            }
         }
     }
     render() {
-        let waterState = '';
-        if (this.state.underwater) {
-            waterState = 'Your location might be underwater'; 
-        } 
-        else {
-            waterState = 'In the worst case scenario your location will likely not be underwater.';
+        let paragraph = ''; 
+        let elevation = this.state.futureElevation;
+        if (elevation >= this.state.rating.good[0] && elevation <=  this.state.rating.good[1]) {
+            paragraph = 'In the worst case scenario, your location will not be under water in the year 2100: the rising sea levels will not affect you in this short time span. A different fate will await many island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken';
         }
+        else if (elevation >= this.state.rating.medium[0] && elevation <= this.state.rating.medium[1]) {
+            paragraph = 'In the worst case scenario, your location will be partially under water in the year 2100: the rising sea levels will affect you in this short time span. The same fate (or worse!) will await many island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken.'
+        }
+        else if (elevation >= this.state.rating.bad[0] && elevation <= this.state.rating.bad[1]) {
+            paragraph = 'In the worst case scenario, your location will be completely under water in the year 2100: the rising sea levels will affect you in this short time span. This fate will await you and  many other island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken.';
+        }
+
         return (
-            <>
-                    <div className='wave__wrapper'>
-                        <Wave className="wave" />
-                    </div>
+            <div className='offset top-slanted-2'>
                     <div className='bg-blue'>
                         <div className="container mx-auto py-60">
-                            <h1 className="title">Rising sea levels</h1>
-                            <p className='subtitle--white'>Your elevation</p>
-                            <h1 className='title'>{this.state.elevation}m</h1>
-                            <p className='subtitle--white'>Your elevation by 2100*</p>
-                            <h1 className='title'>{this.state.futureElevation}m</h1>
-                        
-                            <p className='paragraph--white'>{waterState}</p>
+                            <h1 className="title">Rising sea levels.</h1>
+                            <div className="grid grid-cols-2 gap-3">
+                                <div>
+                                    <p className='paragraph--white'>{ paragraph }</p>
+                                </div>
+                                <div>
+                                    <div className='grid grid-cols-2'>
+                                        <div>
+                                            <p className='subtitle--white'>Your elevation</p>
+                                            <h1 className='title'>{this.state.elevation}m</h1>
+                                        </div>
+                                        <div>
+                                            <p className='subtitle--white'>Your elevation by 2100*</p>
+                                            <h1 className='title'>{this.state.futureElevation}m</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
                         </div>
                     </div>
-            </>
+            </div>
            
         )
     }

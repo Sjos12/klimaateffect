@@ -7,7 +7,12 @@ body {
 .title {
     font-weight: 700;
     color: $green;
+    padding-bottom: 1rem;
     font-size: 4rem;
+}
+.title--white {
+    @extend.title;
+    color: white!important;
 }
 .paragraph {
     font-weight: 300;
@@ -68,4 +73,21 @@ body {
 .subtitle--white {
     @extend.subtitle;
     color: white;
+}
+
+.offset {
+    position: relative;
+    top: -75px;
+    margin-top: -75px;
+}
+
+.top-slanted {
+    clip-path: polygon(0px 0px, 100% 50px, 100% 100%, 0px 100%);
+}
+.top-slanted-2 { 
+    clip-path: polygon(0px 50px, 100% 0px, 100% 100%, 0px 100%);
+}
+#chart {
+    width: 100% !important;
+    height: 400px !important;
 }
