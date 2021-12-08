@@ -39,14 +39,30 @@ body {
 }
 
 .loading {
-    i  {
+    .loading-icon {
+        display: flex;
+    }
+    span {
+        display: none;
+    }
+    .arrow-icon {
+        display: none;
+    }
+}
+.hasloaded {
+    .loading-icon {
+        display: none;
+    }
+    .arrow-icon {
         display: flex;
     }
     span {
         display: none;
     }
 }
-
+.loading-icon, .arrow-icon {
+    display: none;
+}
 .bg-blob {
     width: 280px;
     height: 280px;

@@ -17,34 +17,40 @@ export class App extends React.Component {
         this.state = { 
             locationIsSet: false,
             isLoading: false,
+            hasLoaded: false, 
             location: { lat: 0, lng: 0 }
         }
     }
     setLocation() {
-        this.setState({isLoading: true});
-        navigator.geolocation.getCurrentPosition(
-            (location) => {
-                this.setState({
-                    locationIsSet: true,
-                    isLoading: false,
-                    location: { 
-                        lat: location.coords.latitude, 
-                        lng: location.coords.longitude
-                    }
-                })
-                }, 
-            (error) => {
-                console.log(error)
-                }, 
-            {}
-        );
-     
+        this.setState({isLoading: true}, () => {
+
+            navigator.geolocation.getCurrentPosition(
+                (location) => {
+                    this.setState({
+                        locationIsSet: true,
+                        isLoading: false,
+                        hasLoaded: true,
+                        location: { 
+                            lat: location.coords.latitude, 
+                            lng: location.coords.longitude
+                        }
+                    }, () => {
+                        console.log(this.state.isLoading)
+                    })
+                    }, 
+                (error) => {
+                    console.log(error)
+                    }, 
+                {}
+            );
+        });
     }
     render() {
         if (this.state.locationIsSet) {
             return (
                 <>
                     <Landingpage 
+                        hasLoaded={this.state.hasLoaded}
                         isLoading={this.state.isLoading}
                         setLocation={this.setLocation.bind(this)}
                         location={this.state.location} 
@@ -73,6 +79,7 @@ export class App extends React.Component {
         return (
             <>
                 <Landingpage 
+                    isLoading={this.state.isLoading}
                     setLocation={this.setLocation.bind(this)}
                     location={this.state.location} 
                     constants={this.constants} 
