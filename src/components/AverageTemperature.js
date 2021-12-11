@@ -31,10 +31,10 @@ export default class AverageTemperature extends Component {
                     </div>
                     <div className="col-span-12">
                             <p className="paragraph">
-                            To get a clear picture of what is actually happening, it is important to understand how the earth warms up naturally. The sun emits solar radiation, which warms up our atmosphere. But when the radiation hits the earth, it would bounce back up into space, which is not very efficient in heating the air.
-                        That is why above the atmosphere, there is a sort of blanket containing greenhouse gasses, keeping the solar radiation from escaping so it bounces around in the atmosphere, although some of the heat does escape and make it into space. If this wouldn’t be the case, heat would be trapped forever, creating a very unpleasant environment.
-                        To sustain our modern lifestyle, we need things like factories, containerships and electricity, all of which emit greenhouse gasses. These will rise up and thicken the layer above the atmosphere. This makes it harder for solar radiation to escape, heating up the air more and more, while we keep emitting greenhouse gasses.
-                        Although this might not seem a big deal, it causes all sorts of (in)direct problems. Take for example the ice on the poles which is melting, creating rising sea levels. Or extreme droughts which result in failed crop harvests, starving people. Rising temperatures are a big issue already, which will get even worse over time, unless some key elements are taken away from our civilization.
+                                To get a clear picture of what is actually happening, it is important to understand how the earth warms up naturally. The sun emits solar radiation, which warms up our atmosphere. Above the atmosphere, a sort of blanket containing greenhouse gasses keeps most solar radiation from escaping, although some of the heat does leave the atmosphere and makes it into space. 
+                                To sustain our modern lifestyle, we need things like factories, containerships and electricity, all of which emit greenhouse gasses. These will rise up and thicken the layer above the atmosphere, which will make it harder (and at some point impossible) for solar radiation to escape, heating up the air far above natural temperatures.
+                                This causes all sorts of (in)direct problems. Take for example the melting ice on the poles, creating rising sea levels. Rising temperatures are a big issue already, which will get even worse over time, unless some key elements are taken away from our civilization.
+
                             </p>
                  
 

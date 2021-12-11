@@ -1,4 +1,4 @@
-import React, {  Component } from 'react';
+import React, {  Component, useRef } from 'react';
 import {ReactComponent as Car} from '../images/car.svg';
 import {ReactComponent as Earth} from '../images/earth.svg';
 import {ReactComponent as Plant} from '../images/plant.svg';
@@ -7,6 +7,7 @@ import {ReactComponent as ArrowIcon} from '../images/arrow-down.svg';
 import AirQuality from './AirQuality';
 class Landingpage extends React.Component {
     
+
     constructor(props) {
         super(props);
         this.state = {
@@ -14,6 +15,7 @@ class Landingpage extends React.Component {
         }
     }
     render() { 
+
         console.log('landing page ', this.props.isLoading)
         return ( 
             <div className="container mx-auto">
