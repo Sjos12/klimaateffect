@@ -16,7 +16,7 @@ export default class Footer extends Component {
                                     Climate change causes
                                 </a>
                                 <a  className="green"href="https://www.youtube.com/watch?v=yiw6_JakZFc  ">
-                                    Kurzesagt Climate change video
+                                    Kurzgesagt on Climate change
                                 </a>
                             </div>
                         </div>

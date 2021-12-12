@@ -21,13 +21,13 @@ export default class Sealevel extends React.Component {
         let elevation = this.state.futureElevation;
         elevation = -2;
         if (elevation >= this.state.rating.good[0] && elevation <=  this.state.rating.good[1]) {
-            paragraph = 'In the worst case scenario, your location will not be under water in the year 2100 (data on the right): the rising sea levels will not affect you in this short time span. The same fate (or worse!) will await many island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken. ';
+            paragraph = 'In the worst case scenario, your location will not be under water in the year 2100 the rising sea levels will not affect you in this short time span. The same fate (or worse!) will await many island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken. ';
         }
         else if (elevation >= this.state.rating.medium[0] && elevation <= this.state.rating.medium[1]) {
-            paragraph = 'In the worst case scenario, your location will be almost or partially under water in the year 2100 (data on the right): the rising sea levels will affect you in this short time span. The same fate (or worse!) will await many island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken.'
+            paragraph = 'In the worst case scenario, your location will be almost or partially under water in the year 2100 the rising sea levels will affect you in this short time span. The same fate (or worse!) will await many island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken.'
         }
         else if (elevation <= this.state.rating.bad[0] && elevation >= this.state.rating.bad[1]) {
-            paragraph = 'In the worst case scenario, your location will be under water in the year 2100 (data on the right): the rising sea levels will affect you in this short time span. This fate will await you and many other island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken.';
+            paragraph = 'In the worst case scenario, your location will be under water in the year 2100 the rising sea levels will affect you in this short time span. This fate will await you and many other island nations and coastal cities, which are directly affected by global warming caused by you and everyone else on the planet. These places are likely to be completely covered by the oceans if immediate action is not taken.';
         }
 
         return (
