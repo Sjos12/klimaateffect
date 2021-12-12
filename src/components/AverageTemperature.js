@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Chart from 'chart.js/auto';
 
+import chartTrendline from "chartjs-plugin-trendline";
 export default class AverageTemperature extends Component {
     constructor(props) {
         super(props);
@@ -44,8 +45,9 @@ export default class AverageTemperature extends Component {
         
         )
     }
-
+x
     componentDidMount() {
+
         let chartData = {
             type: 'line',
             data: {
@@ -175,6 +177,7 @@ export default class AverageTemperature extends Component {
                             values: values,
                             }, () => {
                                 let ctx = document.getElementById('chart');
+                                Chart.register(chartTrendline);
                                 let chart = new Chart(ctx, {
                                     type: 'line',
                                     data: {
@@ -188,8 +191,16 @@ export default class AverageTemperature extends Component {
                                             borderColor: [
                                                 '#9CEC5B',
                                             ],
-                                            borderWidth: 4,
-                                            tension: 0.2
+                                            pointRadius: 2,
+                                            pointBackgroundColor: '#9CEC5B',
+                                            tension: 0.2,
+                                            showLine: false,
+                                            trendlineLinear: {
+                                                style: '#9CEC5B',
+                                                lineStyle: "solid",
+                                                width: 3
+                                            }
+                                            
                                         }]
                                     },
                                     options: {
